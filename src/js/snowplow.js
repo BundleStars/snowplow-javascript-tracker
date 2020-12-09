@@ -214,7 +214,7 @@ export function Snowplow(asynchronousQueue, functionName) {
      * @param string distSubdomain The subdomain on your CloudFront collector's distribution
      */
     getTrackerCf: function (distSubdomain) {
-      var t = new Tracker(functionName, '', version, mutSnowplowState, {});
+      var t = new Tracker(functionName, 'cf', version, mutSnowplowState, {});
       t.setCollectorCf(distSubdomain);
       return t;
     },
@@ -226,7 +226,7 @@ export function Snowplow(asynchronousQueue, functionName) {
      * @param string rawUrl The collector URL minus protocol and /i
      */
     getTrackerUrl: function (rawUrl) {
-      var t = new Tracker(functionName, '', version, mutSnowplowState, {});
+      var t = new Tracker(functionName, 'cf', version, mutSnowplowState, {});
       t.setCollectorUrl(rawUrl);
       return t;
     },
@@ -237,7 +237,7 @@ export function Snowplow(asynchronousQueue, functionName) {
      * @return Tracker
      */
     getAsyncTracker: function () {
-      return new Tracker(functionName, '', version, mutSnowplowState, {});
+      return new Tracker(functionName, 'cf', version, mutSnowplowState, {});
     },
   };
 
